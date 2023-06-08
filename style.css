@@ -1,0 +1,497 @@
+
+body{
+    background-image: url("/students-knowing-right-answer.jpg");
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+    
+}
+.ipek{
+    
+    display: inline-block;
+  margin: 0 0.5rem;
+  
+ 
+
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 3s; /* don't forget to set a duration! */
+
+}
+.ipek h1 {
+    color: #721c24;
+    font-size: 50px;
+    font-weight:bold;
+    margin-left: 1000px;
+}
+
+
+
+.btn_start,
+.quiz_box,
+.score_box {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.quiz_box.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.quiz_box {
+    width: 80%;
+
+    transform: translate(-50%, -50%) scale(0.7);
+    transition: all 0.3s ease;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.quiz_box header .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quiz_box .question_text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quiz_box .option_list {
+    padding: 18px 0;
+}
+
+.quiz_box .option_list .option {
+    border: 1px solid #151D3B;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quiz_box .option_list .option:hover {
+    color: #112B2C;
+    background: #FFD33D;
+}
+
+.quiz_box .option_list .option.correct {
+    color: #155724;
+    background: #d4edda;
+}
+
+.quiz_box .option_list .option.incorrect {
+    color: #721c24;
+    background: #f8d7da;
+}
+
+.quiz_box .option_list .option.disabled {
+    pointer-events: none;
+}
+
+.quiz_box .next_btn {
+    opacity: 0;
+    pointer-events: none;
+
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.quiz_box .next_btn.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.quiz_box footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* timer */
+.quiz_box header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.quiz_box header .timer {
+    display: flex;
+    align-items: center;
+    background: #143F68;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.quiz_box header .timer .time_text {
+    font-size: 14px;
+}
+
+.quiz_box header .timer .time_second {
+    background: #F0A500;
+    border-radius: 3px;
+    padding: 3px;
+    margin-left: 3px;
+    width: 44px;
+    text-align: center;
+}
+
+.quiz_box header .time_line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    /* width: 550px;  0 - 500 */
+    background: #F0A500;
+}
+
+/* score box */
+.score_box.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.score_box {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+
+    transform: translate(-50%, -50%) scale(0.7);
+    transition: all 0.3s ease;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.score_box .icon {
+    font-size: 90px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.score_box .score_text {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.cssload-main {
+	position: absolute;
+	content: '';
+	left: 50%;
+	top: 15%;
+	transform: translate(-100%, -240%);
+		-o-transform: translate(-100%, -240%);
+		-ms-transform: translate(-100%, -240%);
+		-webkit-transform: translate(-100%, -240%);
+		-moz-transform: translate(-100%, -240%);
+}
+
+.cssload-main *{
+	font-size:62px;
+}
+
+.cssload-heart {
+	animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-o-animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-ms-animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-webkit-animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-moz-animation: cssload-heart 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+	top: 50%;
+	content: '';
+	left: 50%;
+	position: absolute;
+}
+
+.cssload-heartL {
+	width: 1em;
+	height: 1em;
+	border: 1px solid rgb(63,193,242);
+	background-color: rgb(63,193,242);
+	content: '';
+	position: absolute;
+	display: block;
+	border-radius: 100%;
+	animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-o-animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-ms-animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-webkit-animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-moz-animation: cssload-heartL 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+	transform: translate(-28px, -27px);
+		-o-transform: translate(-28px, -27px);
+		-ms-transform: translate(-28px, -27px);
+		-webkit-transform: translate(-28px, -27px);
+		-moz-transform: translate(-28px, -27px);
+}
+
+.cssload-heartR {
+	width: 1em;
+	height: 1em;
+	border: 1px solid rgb(63,193,242);
+	background-color: rgb(63,193,242);
+	content: '';
+	position: absolute;
+	display: block;
+	border-radius: 100%;
+	transform: translate(28px, -27px);
+		-o-transform: translate(28px, -27px);
+		-ms-transform: translate(28px, -27px);
+		-webkit-transform: translate(28px, -27px);
+		-moz-transform: translate(28px, -27px);
+	animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-o-animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-ms-animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-webkit-animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-moz-animation: cssload-heartR 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+}
+
+.cssload-square {
+	width: 1em;
+	height: 1em;
+	border: 1px solid rgb(63,193,242);
+	background-color: rgb(63,193,242);
+	position: relative;
+	display: block;
+	content: '';
+	transform: scale(1) rotate(-45deg);
+		-o-transform: scale(1) rotate(-45deg);
+		-ms-transform: scale(1) rotate(-45deg);
+		-webkit-transform: scale(1) rotate(-45deg);
+		-moz-transform: scale(1) rotate(-45deg);
+	animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-o-animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-ms-animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-webkit-animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-moz-animation: cssload-square 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+}
+
+.cssload-shadow {
+	top: 97px;
+	left: 50%;
+	content: '';
+	position: relative;
+	display: block;
+	bottom: -.5em;
+	width: 1em;
+	height: .24em;
+	background-color: rgb(215,215,215);
+	border: 1px solid rgb(215,215,215);
+	border-radius: 50%;
+	animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-o-animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-ms-animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-webkit-animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+		-moz-animation: cssload-shadow 2.88s cubic-bezier(0.75, 0, 0.5, 1) infinite normal;
+}
+
+
+
+
+
+
+
+@keyframes cssload-square {
+	50% {
+		border-radius: 100%;
+		transform: scale(0.5) rotate(-45deg);
+	}
+	100% {
+		transform: scale(1) rotate(-45deg);
+	}
+}
+
+@-o-keyframes cssload-square {
+	50% {
+		border-radius: 100%;
+		-o-transform: scale(0.5) rotate(-45deg);
+	}
+	100% {
+		-o-transform: scale(1) rotate(-45deg);
+	}
+}
+
+@-ms-keyframes cssload-square {
+	50% {
+		border-radius: 100%;
+		-ms-transform: scale(0.5) rotate(-45deg);
+	}
+	100% {
+		-ms-transform: scale(1) rotate(-45deg);
+	}
+}
+
+@-webkit-keyframes cssload-square {
+	50% {
+		border-radius: 100%;
+		-webkit-transform: scale(0.5) rotate(-45deg);
+	}
+	100% {
+		-webkit-transform: scale(1) rotate(-45deg);
+	}
+}
+
+@-moz-keyframes cssload-square {
+	50% {
+		border-radius: 100%;
+		-moz-transform: scale(0.5) rotate(-45deg);
+	}
+	100% {
+		-moz-transform: scale(1) rotate(-45deg);
+	}
+}
+
+@keyframes cssload-heart {
+	50% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(720deg);
+	}
+}
+
+@-o-keyframes cssload-heart {
+	50% {
+		-o-transform: rotate(360deg);
+	}
+	100% {
+		-o-transform: rotate(720deg);
+	}
+}
+
+@-ms-keyframes cssload-heart {
+	50% {
+		-ms-transform: rotate(360deg);
+	}
+	100% {
+		-ms-transform: rotate(720deg);
+	}
+}
+
+@-webkit-keyframes cssload-heart {
+	50% {
+		-webkit-transform: rotate(360deg);
+	}
+	100% {
+		-webkit-transform: rotate(720deg);
+	}
+}
+
+@-moz-keyframes cssload-heart {
+	50% {
+		-moz-transform: rotate(360deg);
+	}
+	100% {
+		-moz-transform: rotate(720deg);
+	}
+}
+
+@keyframes cssload-heartL {
+	60% {
+		transform: scale(0.4);
+	}
+}
+
+@-o-keyframes cssload-heartL {
+	60% {
+		-o-transform: scale(0.4);
+	}
+}
+
+@-ms-keyframes cssload-heartL {
+	60% {
+		-ms-transform: scale(0.4);
+	}
+}
+
+@-webkit-keyframes cssload-heartL {
+	60% {
+		-webkit-transform: scale(0.4);
+	}
+}
+
+@-moz-keyframes cssload-heartL {
+	60% {
+		-moz-transform: scale(0.4);
+	}
+}
+
+@keyframes cssload-heartR {
+	40% {
+		transform: scale(0.4);
+	}
+}
+
+@-o-keyframes cssload-heartR {
+	40% {
+		-o-transform: scale(0.4);
+	}
+}
+
+@-ms-keyframes cssload-heartR {
+	40% {
+		-ms-transform: scale(0.4);
+	}
+}
+
+@-webkit-keyframes cssload-heartR {
+	40% {
+		-webkit-transform: scale(0.4);
+	}
+}
+
+@-moz-keyframes cssload-heartR {
+	40% {
+		-moz-transform: scale(0.4);
+	}
+}
+
+@keyframes cssload-shadow {
+	50% {
+		transform: scale(0.5);
+		border-color: rgb(228,228,228);
+	}
+}
+
+@-o-keyframes cssload-shadow {
+	50% {
+		-o-transform: scale(0.5);
+		border-color: rgb(228,228,228);
+	}
+}
+
+@-ms-keyframes cssload-shadow {
+	50% {
+		-ms-transform: scale(0.5);
+		border-color: rgb(228,228,228);
+	}
+}
+
+@-webkit-keyframes cssload-shadow {
+	50% {
+		-webkit-transform: scale(0.5);
+		border-color: rgb(228,228,228);
+	}
+}
+
+@-moz-keyframes cssload-shadow {
+	50% {
+		-moz-transform: scale(0.5);
+		border-color: rgb(228,228,228);
+	}
+}
+
